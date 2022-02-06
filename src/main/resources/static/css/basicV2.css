@@ -1,0 +1,175 @@
+#inclinationText {
+    color :rgba(52, 84, 97, 1.0);
+    font-weight: bolder;
+    font-size: 30px;
+    transform: rotate(-30deg);
+    border: 1px;
+    position: absolute;
+    top : 30px;
+    left : 10px;
+    height: 50px;
+    width: 300px;
+}
+
+
+#btn1 {
+    background-color: deepskyblue;
+    border: 0px;
+    color: white;
+    font-weight: bolder;
+    font-size : 15px;
+    position: absolute;
+    top : 30px;
+    right : 10px;
+    height: 50px;
+    width: 200px;
+}
+
+.mainlist {
+    background-color: rgba(52, 84, 97, 1.0);
+    color: white;
+    font-weight: bolder;
+    text-align:left;
+    font-size: 20px;
+    border: 1px solid gray;
+
+    position: relative;
+    float: right;
+    width: 25%;
+    top : 120px;
+    padding: 20px;
+    margin: 10px;
+}
+
+#todolist {
+    background-color: rgba(206, 229, 239, 1.0);
+    color: black;
+    font-weight: bolder;
+    text-align:left;
+    font-size: 20px;
+    border: 1px solid gray;
+
+    position: absolute;
+    float: right;
+    width: 25%;
+    top : 120px;
+    height: 30px;
+    padding: 20px;
+    margin: 10px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flex-container > div {
+    background-color: rgba(52, 84, 97, 1.0);
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+
+
+    width: 33%;
+    font-weight: bolder;
+    color : white;
+  }
+
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    left : 200px;
+}
+
+.nav-container > div {
+    background-color: rgba(52, 84, 97, 1.0);
+
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+
+    left : 200px;
+    flex-basis: 33.3%;
+    font-weight: bolder;
+    color : white;
+}
+
+.head2 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+
+    position : relative;
+}
+
+.centerfix {
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 20px;
+    position : relative;
+}
+
+.centerfix > div {
+    margin-bottom: 30px;
+    position: relative;
+    left: 300px;
+}
+
+.centerfix_font {
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.footer_todo {
+    border: 1px solid gray;
+    position: absolute;
+    left : 300px;
+    float : left;
+    margin-top: 30px;
+}
+
+#btn2 {
+    background-color: deepskyblue;
+    border: 0px;
+    color: white;
+    font-weight: bolder;
+    font-size : 15px;
+    position: absolute;
+    top : 0px;
+    left: 180px;
+    height: 30px;
+    width: 100px;
+}
+
+#btn3 {
+    background-color: deepskyblue;
+    border: 0px;
+    color: white;
+    font-weight: bolder;
+    font-size : 15px;
+    position: absolute;
+    top : 0px;
+    left: 300px;
+    height: 30px;
+    width: 100px;
+}
+
+#btn4 {
+    background-color: whitesmoke;
+    border: 1px solid gray;
+    color: black;
+    font-weight: bolder;
+    font-size : 15px;
+    position: absolute;
+    top : 0px;
+    left: 0px;
+    height: 30px;
+    width: 100px;
+
+    text-decoration: underline;
+}

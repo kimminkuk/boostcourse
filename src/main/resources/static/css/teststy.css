@@ -3,6 +3,13 @@ header {
     text-align: center;
     padding-bottom: 5px;
 }
+
+h2 {
+    left : 100px;
+    height : 300px;
+    border : 1px solid gray;
+}
+
 .buttonsty {
     margin-right : 3px;
     position: absolute;

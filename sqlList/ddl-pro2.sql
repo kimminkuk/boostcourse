@@ -1,0 +1,9 @@
+create TABLE todo (
+    id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    sequence INT(1) NOT NULL,
+    type VARCHAR(20) DEFAULT 'TODO',
+    regdate DATETIME DEFAULT NOW(),
+    PRIMARY KEY (id)
+);
