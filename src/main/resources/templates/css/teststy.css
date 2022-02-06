@@ -1,0 +1,135 @@
+header {
+    color : black;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+h2 {
+    left : 100px;
+    height : 300px;
+    border : 1px solid gray;
+}
+
+.buttonsty {
+    margin-right : 3px;
+    position: absolute;
+    right : 30px;
+    color : purple;
+}
+#buttonsty2 {
+    background-color: skyblue;
+    color : purple;
+}
+.myspan {
+    color : green;
+    font-size : 1.5em;
+}
+.myimg {
+    width: 100px;
+    height: 100px;
+    border : 1px solid gray;
+    margin-top : 10px;
+    margin-bottom: 10px;
+}
+.myimg2 {
+    width: 700;
+    height: 365px;
+    margin-top : 10px;
+    margin-bottom: 10px;
+}
+.mypadding_1 {
+    
+    padding-bottom: 10px;
+    margin-bottom : 10px
+}
+.line {
+    border-style: solid;
+    border-width: 4px;
+    border-color: silver;
+}
+.line2 {
+    margin-top: 20px;
+    border-style: solid;
+    border-width: 4px;
+    border-color: silver;
+}
+
+#line3 {
+    margin-top : 20px;
+    border-style: solid;
+    border-width: 4px;
+    border-color: silver;
+}
+
+div {
+    font-size: 6px;
+    text-align: center;
+    color: silver;
+}
+#last {
+    font-size: 6px;
+    text-align: center;
+    color: silver;
+}
+
+#font_1 {
+    margin-left : 10%;
+    font-size : 20px;
+    font-weight: bold;
+    color:black;
+}
+
+.font_2 {
+    font-size : 14px;
+    color : black;
+}
+
+.block_1 {
+    border : 1px solid black;
+    height: 150px;
+    font-size: 14px;
+    color : black;
+}
+
+
+footer {
+    font-size: 6px;
+    text-align: center;
+    color: silver;
+}
+
+section {
+    text-align: center;
+}
+
+nav {
+    color : black;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+article {
+    height: 150px;
+    margin-left : 10%;
+    border : 1px solid silver;
+    margin-bottom: 5%;
+}
+
+.imgSort {
+    border : 1px solid silver;
+    height: 150px;
+    margin : 20px;
+}
+
+#myimg3 {
+    width: 200px;
+    height: 150px;
+    border : 1px solid gray;
+    float: left;
+}
+
+.articleText {
+    margin-top : 20px;
+    font-size : 18px;
+    color : black;
+}
