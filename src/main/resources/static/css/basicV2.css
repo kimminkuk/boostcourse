@@ -1,4 +1,4 @@
-#inclinationText {
+.inclinationText {
     color :rgba(52, 84, 97, 1.0);
     font-weight: bolder;
     font-size: 30px;
@@ -11,21 +11,22 @@
     width: 300px;
 }
 
-
-#btn1 {
+.btn1 {
     background-color: deepskyblue;
-    border: 0px;
     color: white;
     font-weight: bolder;
-    font-size : 15px;
+    text-align:left;
+    font-size: 20px;
+    border: 1px solid gray;
+
     position: absolute;
-    top : 30px;
-    right : 10px;
-    height: 50px;
-    width: 200px;
+    top : 20px;
+    left : 70%;
+    width: 25%;
+    padding : 20px;
 }
 
-.mainlist {
+.mainlist1 {
     background-color: rgba(52, 84, 97, 1.0);
     color: white;
     font-weight: bolder;
@@ -33,15 +34,54 @@
     font-size: 20px;
     border: 1px solid gray;
 
-    position: relative;
-    float: right;
+    position: absolute;
+    top : 100px;
+    left : 10%;
     width: 25%;
-    top : 120px;
+
     padding: 20px;
-    margin: 10px;
 }
 
-#todolist {
+.mainlist2 {
+    background-color: rgba(52, 84, 97, 1.0);
+    color: white;
+    font-weight: bolder;
+    text-align:left;
+    font-size: 20px;
+    border: 1px solid gray;
+
+    position: absolute;
+    top : 100px;
+    left : 40%;
+    width: 25%;
+
+    padding: 20px;
+}
+
+.mainlist3 {
+    background-color: rgba(52, 84, 97, 1.0);
+    color: white;
+    font-weight: bolder;
+    text-align:left;
+    font-size: 20px;
+    border: 1px solid gray;
+
+    position: absolute;
+    top : 100px;
+    left : 70%;
+    width: 25%;
+
+    padding: 20px;
+}
+
+.todolist1_frame {
+    position: absolute;
+    top : 190px;
+    left : 10%;
+    width: 25%
+}
+
+.todolist1 {
     background-color: rgba(206, 229, 239, 1.0);
     color: black;
     font-weight: bolder;
@@ -49,52 +89,61 @@
     font-size: 20px;
     border: 1px solid gray;
 
+    position: relative;
+
+    left : 0%;
+    height: 70px;
+
+    margin-bottom: 20px;
+    padding : 10px;
+}
+
+.todolist2_frame {
     position: absolute;
-    float: right;
-    width: 25%;
-    top : 120px;
-    height: 30px;
-    padding: 20px;
-    margin: 10px;
+    top : 190px;
+    left : 40%;
+    width: 25%
 }
 
-.flex-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .flex-container > div {
-    background-color: rgba(52, 84, 97, 1.0);
-    width: 100px;
-    margin: 10px;
-    text-align: center;
-    line-height: 75px;
-    font-size: 30px;
-
-
-    width: 33%;
+.todolist2 {
+    background-color: rgba(206, 229, 239, 1.0);
+    color: black;
     font-weight: bolder;
-    color : white;
-  }
+    text-align:left;
+    font-size: 20px;
+    border: 1px solid gray;
 
-.nav-container {
-    display: flex;
-    flex-direction: row;
-    left : 200px;
+    position: relative;
+
+    left : 0%;
+    height: 70px;
+
+    margin-bottom: 20px;
+    padding : 10px;
 }
 
-.nav-container > div {
-    background-color: rgba(52, 84, 97, 1.0);
+.todolist3_frame {
+    position: absolute;
+    top : 190px;
+    left : 70%;
+    width: 25%
+}
 
-    margin: 10px;
-    text-align: center;
-    line-height: 75px;
-    font-size: 30px;
-
-    left : 200px;
-    flex-basis: 33.3%;
+.todolist3 {
+    background-color: rgba(206, 229, 239, 1.0);
+    color: black;
     font-weight: bolder;
-    color : white;
+    text-align:left;
+    font-size: 20px;
+    border: 1px solid gray;
+
+    position: relative;
+
+    left : 00%;
+    height: 70px;
+
+    margin-bottom: 20px;
+    padding : 10px;
 }
 
 .head2 {
@@ -132,7 +181,6 @@
     float : left;
     margin-top: 30px;
 }
-
 #btn2 {
     background-color: deepskyblue;
     border: 0px;

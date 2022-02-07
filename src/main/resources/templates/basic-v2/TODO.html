@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO MAKE</title>
+    <link rel="stylesheet" href="../css/basicV2.css?ver=1">
+</head>
+<body>
+<header class = "head2">
+    할일 등록
+</header>
+
+<form class="centerfix" name = "PostDB" method="post" enctype="UTF-8">
+    <div name="WhatWorkInputName">
+        어떤일인가요?<br>
+        <input class = "input-text" id ="WhatWork_id" type="text" name="titleParam" required maxlength="48" placeholder="결제시스템 구축" size="48"/>
+    </div>
+    <div name="WhoWorkInputName">
+        누가 할일인가요?<br>
+        <input class = "input-text" id ="WhoWork_id" type="text" name="nameParam" required maxlength="24" placeholder="Hashimoto" size="16">
+    </div>
+    <div name="PriorityRadButton" >
+        우선순위를 입력하세요.<br>
+        <div class = "centerfix_font">
+            <label><input class = "input-radio" type="radio" name="sequenceParam" value="1" checked/>1순위</label>
+            <label><input class = "input-radio" type="radio" name="sequenceParam" value="2"/>2순위</label>
+            <label><input class = "input-radio" type="radio" name="sequenceParam" value="3"/>3순위</label>
+        </div>
+    </div>
+    <div name="btnlist">
+        <button id = "btn4" type="button" onclick="return_main()" style="cursor: hand;">
+            &lt; 이전
+        </button>
+
+        <button id = "btn2" type="button" onclick="SendToDo(titleParam, nameParam, sequenceParam)" style="cursor: hand;">
+            제출
+        </button>
+
+        <button name = "AjaxDelBtn" id = "btn3" type="button" onclick="clearTextInput()" style="cursor: hand;">
+            내용지우기
+        </button>
+    </div>
+
+    <div class = "testfor46">  </div>
+</form>
+<article>
+
+</article>
+
+<script type="text/javascript" src="../js/summit.js?ver=14"></script>
+</body>
+</html>

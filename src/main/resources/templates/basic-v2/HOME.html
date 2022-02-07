@@ -8,33 +8,57 @@
 </head>
 <body>
 <header>
-    <div id = "inclinationText">
+    <div class = "inclinationText">
         나의 해야할 일들
     </div>
-    <div class = "btnsty">
-        <button id = "btn1" type="button" onclick="location.href='./TODOpage.html'" style="cursor: hand;">
+    <div>
+        <button class = "btn1" type="button" onclick="location.href='./TODO'" style="cursor:pointer">
             새로운 TODO 등록
         </button>
     </div>
 </header>
-<nav class = "mainlist">
+<nav class = "mainlist1">
     TODO
-    <div name='testNav2' id='testNav2'></div>
 </nav>
 
-<nav class = "mainlist">
+<nav class = "mainlist2">
     DOING
 </nav>
 
-<nav class = "mainlist">
+<nav class = "mainlist3">
     DONE
 </nav>
 
-<form action=""></form>
+    <nav class = "todolist1_frame">
+        <form class = "todolist1" th:each="todo1 : ${todos1}">
+            <div th:text="${todo1.title}"></div>
+            <div th:text="${todo1.name}"></div>
+            <div th:text="${todo1.type}"></div>
+            <div th:text="${todo1.regDate}"></div>
+        </form>
+    </nav>
 
-<script type="text/javascript" src="summit.js"></script>
+    <nav class = "todolist2_frame">
+        <form class = "todolist2" th:each="todo2 : ${todos2}">
+            <div th:text="${todo2.title}"></div>
+            <div th:text="${todo2.name}"></div>
+            <div th:text="${todo2.type}"></div>
+            <div th:text="${todo2.regDate}"></div>
+        </form>
+    </nav>
+
+    <nav class = "todolist3_frame">
+        <form class = "todolist3" th:each="todo3 : ${todos3}">
+            <div th:text="${todo3.title}"></div>
+            <div th:text="${todo3.name}"></div>
+            <div th:text="${todo3.type}"></div>
+            <div th:text="${todo3.regDate}"></div>
+        </form>
+    </nav>
+
+
 </body>
 <footer>
-
 </footer>
+<script type="text/javascript" src="../js/summit.js"></script>
 </html>
