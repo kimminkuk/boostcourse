@@ -3,15 +3,17 @@ package boostcourse1.boostcourse1spring.courseV2.controller;
 import boostcourse1.boostcourse1spring.courseV2.domain.todo.Todo;
 import boostcourse1.boostcourse1spring.courseV2.domain.todo.TodoService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
+@Slf4j
 @Controller
 @RequestMapping("/basic-v2")
 @RequiredArgsConstructor
@@ -44,6 +46,7 @@ public class courseV2Controller {
         model.addAttribute("todos2", todos2);
         model.addAttribute("todos3", todos3);
         model.addAttribute("todos", todos);
+
         return "basic-v2/HOME";
     }
 
@@ -53,9 +56,22 @@ public class courseV2Controller {
         return "basic-v2/TODO";
     }
 
+    //This Redirect Action in Ajax
     @PostMapping("/TODO")
-    public String TodoAdd(Model model) {
+    public void TodoAdd(Model model,
+                          @ModelAttribute("todo") Todo todo,
+                          @RequestParam("param1") String title,
+                          @RequestParam("param2") String name,
+                          @RequestParam("param3") int sequence) {
+        String type = String.valueOf(sequence) + "순위";
+        Date date = new Date();
+        Todo savedTodo = new Todo(title, name, sequence, type, date);
+        Todo todo1 = todoService.saveTodoService(savedTodo);
+        return;
+    }
 
-        return "basic-v2/TODO";
+    @GetMapping("/todo/{todoId}")
+    public String todo(@PathVariable long todoId, Model model) {
+        return "basic-v2/check";
     }
 }

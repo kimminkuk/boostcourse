@@ -12,25 +12,29 @@ function GetDateFunc() {
     return Date_current;
 }
 
-function SendToDo(param1, param2, param3) {
+function SendToDo(pTitle, pName, pSequence) {
     var currentDate = GetDateFunc();
 
     var xhr = new XMLHttpRequest();
+    var ur = 'http://localhost:8080/basic-v2/TODO'
     xhr.onreadystatechange = function () {
         if (xhr.readyState === xhr.DONE) {
             if (xhr.status === 200 || xhr.status === 201) {
                 console.log(xhr.responseText);
+                window.location.replace('http://localhost:8080/basic-v2/HOME');
             } else {
                 console.error(xhr.responseText);
+                alert('문제발생')
+                xhr.open('GET', ur);
             }
         }
     };
 
-    //var ur = 'http://localhost:8080/basic-v2/HOME?' + "WhatWork_name=" + param1.value
-    //+ "&WhoWork_name=" + param2.value + "&PriorityBtn_name=" + param3.value;
-    var ur = 'http://localhost:8080/basic-v2/TODO'
-    var temp = 'param1=' + encodeURIComponent(param1);
-    xhr.open('POST', ur);
+    var SendToDo_Data = "param1=" + encodeURIComponent(pTitle.value) +
+    "&param2=" + encodeURIComponent(pName.value) +
+    "&param3=" + encodeURIComponent(pSequence.value)
+
+    xhr.open('POST', ur, true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.send(temp);
+    xhr.send(SendToDo_Data);
 }
