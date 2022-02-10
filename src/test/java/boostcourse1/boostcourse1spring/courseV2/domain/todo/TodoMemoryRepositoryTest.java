@@ -45,4 +45,21 @@ class TodoMemoryRepositoryTest {
         Todo savedTodo = todoMemoryRepository.save(todo1);
         List<Todo> all = todoMemoryRepository.findAll();
     }
+
+    @Test
+    void updateParam() {
+        //given
+        LocalDateTime localDateTime = LocalDateTime.now();
+        Date date = new Date();
+        Todo todo1 = new Todo("프로젝트2 만들기", "요다입니다.", 1, "1순위", date);
+        Long todoId = todo1.getId();
+        //when
+        Todo updateParam = new Todo("프로젝트2 만들기2", "요다입니다.", 2, "2순위", date);
+        todoMemoryRepository.update(todoId, updateParam);
+
+        //then
+        Todo findTodo = todoMemoryRepository.findById(todoId).get();
+        assertThat(findTodo.getSequence()).isEqualTo(updateParam.getSequence());
+        assertThat(findTodo.getType()).isEqualTo(updateParam.getType());
+    }
 }

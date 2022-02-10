@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Transactional
 public class TodoService {
@@ -13,6 +14,14 @@ public class TodoService {
     @Autowired
     public TodoService(TodoRepository todoRepository) {
         this.todoRepository = todoRepository;
+    }
+
+    public Optional<Todo> findOne(Long todoId) {
+        return todoRepository.findById(todoId);
+    }
+
+    public void updateTodoService(Long todoId, Todo updateParam) {
+        todoRepository.update(todoId, updateParam);
     }
 
     public Todo saveTodoService(Todo todo) {

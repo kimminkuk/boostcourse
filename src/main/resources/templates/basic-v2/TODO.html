@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
     <title>TODO MAKE</title>
     <link rel="stylesheet" href="../css/basicV2.css?ver=1">
 </head>
@@ -30,15 +30,15 @@
         </div>
     </div>
     <div name="btnlist">
-        <button id = "btn4" type="button" onclick="return_main()" style="cursor: hand;">
+        <button id = "btn4" type="button" onclick="return_main()" style="cursor:pointer">
             &lt; 이전
         </button>
 
-        <button id = "btn2" type="button" onclick="SendToDo(titleParam, nameParam, sequenceParam)" style="cursor: hand;">
+        <button id = "btn2" type="button" onclick="SendToDoWhy(titleParam, nameParam, sequenceParam)" style="cursor:pointer">
             제출
         </button>
 
-        <button name = "AjaxDelBtn" id = "btn3" type="button" onclick="clearTextInput()" style="cursor: hand;">
+        <button name = "AjaxDelBtn" id = "btn3" type="button" onclick="clearTextInput()" style="cursor:pointer">
             내용지우기
         </button>
     </div>
@@ -49,6 +49,6 @@
 
 </article>
 
-<script type="text/javascript" src="../js/summit.js?ver=14"></script>
 </body>
+<script type="text/javascript" src="../js/summit.js"></script>
 </html>

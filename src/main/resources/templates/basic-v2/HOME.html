@@ -29,30 +29,37 @@
     DONE
 </nav>
 
-    <nav class = "todolist1_frame">
-        <form class = "todolist1" th:each="todo1 : ${todos1}">
-            <div th:text="${todo1.title}"></div>
-            <div th:text="${todo1.name}"></div>
-            <div th:text="${todo1.type}"></div>
-            <div th:text="${todo1.regDate}"></div>
+    <nav class = "todolist1_frame" id="todoList1_frameId">
+        <form class = "todolist1" th:each="todo1 : ${todos1}" th:id="|todo1Id_${todo1.id}|">
+                <div th:text="${todo1.title}"></div>
+                <div th:text="${todo1.name}"></div>
+
+                <!--<div th:text="${todo1.type}"></div>
+                <div th:text="${todo1.regDate}"></div>-->
+                <button id="todo1_rarrId" type="button" th:onclick="|rarrActionFunc('todo1Id_${todo1.id}','todoList2_frameId', ${todo1.id}, ${todo1.sequence})|" style="cursor:pointer">
+                    &rarr;
+                </button>
         </form>
     </nav>
 
-    <nav class = "todolist2_frame">
+    <nav class = "todolist2_frame" id="todoList2_frameId">
         <form class = "todolist2" th:each="todo2 : ${todos2}">
             <div th:text="${todo2.title}"></div>
             <div th:text="${todo2.name}"></div>
-            <div th:text="${todo2.type}"></div>
-            <div th:text="${todo2.regDate}"></div>
+            <!--<div th:text="${todo2.type}"></div>
+            <div th:text="${todo2.regDate}"></div>-->
+            <button id="todo2_rarrId" type="button" th:onclick="|rarrActionFunc('todo2Id_${todo2.id}', 'todoList3_frameId', ${todo2.id}, ${todo2.sequence})|" style="cursor:pointer">
+                &rarr;
+            </button>
         </form>
     </nav>
 
-    <nav class = "todolist3_frame">
+    <nav class = "todolist3_frame" id="todoList3_frameId">
         <form class = "todolist3" th:each="todo3 : ${todos3}">
             <div th:text="${todo3.title}"></div>
             <div th:text="${todo3.name}"></div>
-            <div th:text="${todo3.type}"></div>
-            <div th:text="${todo3.regDate}"></div>
+            <!--<div th:text="${todo3.type}"></div>
+            <div th:text="${todo3.regDate}"></div>-->
         </form>
     </nav>
 

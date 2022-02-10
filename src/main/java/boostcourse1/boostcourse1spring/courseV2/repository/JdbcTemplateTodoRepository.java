@@ -22,6 +22,18 @@ public class JdbcTemplateTodoRepository implements TodoRepository {
     }
 
     @Override
+    public Optional<Todo> findById(Long todoId) {
+        List<Todo> result = jdbcTemplate.query("select * from todo where id = ?", todoRowMapper(), todoId);
+        return result.stream().findAny();
+    }
+
+    @Override
+    public void update(Long todoId, Todo updateParam) {
+        jdbcTemplate.update("update todo set sequence = ?, type = ? where id = ?",
+                updateParam.getSequence(), updateParam.getType(), updateParam.getId());
+    }
+
+    @Override
     public Todo save(Todo todo) {
         SimpleJdbcInsert jdbcInsert = new SimpleJdbcInsert(jdbcTemplate);
         jdbcInsert.withTableName("todo").usingGeneratedKeyColumns("id");

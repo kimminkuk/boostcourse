@@ -70,8 +70,20 @@ public class courseV2Controller {
         return;
     }
 
-    @GetMapping("/todo/{todoId}")
-    public String todo(@PathVariable long todoId, Model model) {
-        return "basic-v2/check";
+    //Feedback URL Mapping
+    @GetMapping("/HOME/todoId={todoId_}/&todoSequence={todoSequence_}")
+    public String todoMove2(Model model,
+                            @PathVariable Long todoId_,
+                            @PathVariable int todoSequence_) {
+        Todo todo = todoService.findOne(todoId_).get();
+        if (todoSequence_ < 3) {
+            String type = String.valueOf(todoSequence_ + 1) + "순위";
+            todo.setSequence(todoSequence_ + 1);
+            todo.setType(type);
+        } else {
+            //Error Code Feedback
+        }
+        todoService.updateTodoService(todoId_, todo);
+        return "basic-v2/HOME";
     }
 }
