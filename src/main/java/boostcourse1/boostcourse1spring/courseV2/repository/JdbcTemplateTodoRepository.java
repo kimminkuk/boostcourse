@@ -22,6 +22,11 @@ public class JdbcTemplateTodoRepository implements TodoRepository {
     }
 
     @Override
+    public void delete(Long todoId) {
+        jdbcTemplate.update("delete from todo where id = ? ", todoId);
+    }
+
+    @Override
     public Optional<Todo> findById(Long todoId) {
         List<Todo> result = jdbcTemplate.query("select * from todo where id = ?", todoRowMapper(), todoId);
         return result.stream().findAny();

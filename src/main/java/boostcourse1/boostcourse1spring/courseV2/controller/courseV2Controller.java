@@ -86,4 +86,11 @@ public class courseV2Controller {
         todoService.updateTodoService(todoId_, todo);
         return "basic-v2/HOME";
     }
+
+    @GetMapping("/HOME/DEL/{todoId}")
+    public String todoDelete(Model model,
+                             @PathVariable Long todoId) {
+        todoService.deleteTodoService(todoId);
+        return "basic-v2/HOME";
+    }
 }

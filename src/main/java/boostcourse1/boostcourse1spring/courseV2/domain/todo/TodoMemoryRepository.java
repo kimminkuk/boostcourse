@@ -7,6 +7,11 @@ public class TodoMemoryRepository implements TodoRepository {
     private static long sequence = 0L;
 
     @Override
+    public void delete(Long todoId) {
+        store.remove(todoId);
+    }
+
+    @Override
     public void update(Long todoId, Todo updateParam) {
         Todo findTodo = findById(todoId).get();
         findTodo.setSequence(updateParam.getSequence());

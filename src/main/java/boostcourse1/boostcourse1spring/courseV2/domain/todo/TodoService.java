@@ -20,6 +20,10 @@ public class TodoService {
         return todoRepository.findById(todoId);
     }
 
+    public void deleteTodoService(Long todoId) {
+        todoRepository.delete(todoId);
+    }
+
     public void updateTodoService(Long todoId, Todo updateParam) {
         todoRepository.update(todoId, updateParam);
     }

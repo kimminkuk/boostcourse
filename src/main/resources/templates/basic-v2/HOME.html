@@ -12,6 +12,11 @@
         나의 해야할 일들
     </div>
     <div>
+        <button class = "btn1-2" type="button" onclick="location.href='./TODO'" style="cursor:pointer">
+            저장
+        </button>
+    </div>
+    <div>
         <button class = "btn1" type="button" onclick="location.href='./TODO'" style="cursor:pointer">
             새로운 TODO 등록
         </button>
@@ -31,35 +36,45 @@
 
     <nav class = "todolist1_frame" id="todoList1_frameId">
         <form class = "todolist1" th:each="todo1 : ${todos1}" th:id="|todo1Id_${todo1.id}|">
-                <div th:text="${todo1.title}"></div>
-                <div th:text="${todo1.name}"></div>
-
-                <!--<div th:text="${todo1.type}"></div>
-                <div th:text="${todo1.regDate}"></div>-->
-                <button id="todo1_rarrId" type="button" th:onclick="|rarrActionFunc('todo1Id_${todo1.id}','todoList2_frameId', ${todo1.id}, ${todo1.sequence})|" style="cursor:pointer">
-                    &rarr;
-                </button>
+                <div th:text="${todo1.title}" style="font-size:20px"></div>
+                <div th:text="${todo1.name}" style="font-size:15px"></div>
+                <div th:text="${todo1.regDate}" style="font-size:15px"></div>
+            <button id="todo1_rarrId" type="button"  th:data-parameter1="${todo1.title}"
+                    th:onclick="|rarrActionFunc(${todo1.id}, ${todo1.sequence}, this.getAttribute('data-parameter1'))|" style="cursor:pointer">
+                &rarr;
+            </button>
+            <button id="todo1_X" type="button" style='position:absolute; top:0px; right:0%; cursor:pointer;'
+                    th:onclick="|todoDeleteFunc(${todo1.id})|">
+                &#88;
+            </button>
         </form>
     </nav>
 
     <nav class = "todolist2_frame" id="todoList2_frameId">
-        <form class = "todolist2" th:each="todo2 : ${todos2}">
-            <div th:text="${todo2.title}"></div>
-            <div th:text="${todo2.name}"></div>
-            <!--<div th:text="${todo2.type}"></div>
-            <div th:text="${todo2.regDate}"></div>-->
-            <button id="todo2_rarrId" type="button" th:onclick="|rarrActionFunc('todo2Id_${todo2.id}', 'todoList3_frameId', ${todo2.id}, ${todo2.sequence})|" style="cursor:pointer">
+        <form class = "todolist2" th:each="todo2 : ${todos2}" th:id="|todo2Id_${todo2.id}|">
+            <div th:text="${todo2.title}" style="font-size:20px"></div>
+            <div th:text="${todo2.name}" style="font-size:15px"></div>
+            <div th:text="${todo2.regDate}" style="font-size:15px"></div>
+            <button id="todo2_rarrId" type="button"  th:data-parameter1="${todo2.title}"
+                    th:onclick="|rarrActionFunc(${todo2.id}, ${todo2.sequence}, this.getAttribute('data-parameter1'))|" style="cursor:pointer">
                 &rarr;
+            </button>
+            <button id="todo2_X" type="button" style='position:absolute; top:0px; right:0%; cursor:pointer;'
+                    th:onclick="|todoDeleteFunc(${todo2.id})|">
+                &#88;
             </button>
         </form>
     </nav>
 
     <nav class = "todolist3_frame" id="todoList3_frameId">
-        <form class = "todolist3" th:each="todo3 : ${todos3}">
-            <div th:text="${todo3.title}"></div>
-            <div th:text="${todo3.name}"></div>
-            <!--<div th:text="${todo3.type}"></div>
-            <div th:text="${todo3.regDate}"></div>-->
+        <form class = "todolist3" th:each="todo3 : ${todos3}" th:id="|todo3Id_${todo3.id}|">
+            <div th:text="${todo3.title}" style="font-size:20px"></div>
+            <div th:text="${todo3.name}" style="font-size:15px"></div>
+            <div th:text="${todo3.regDate}" style="font-size:15px"></div>
+            <button id="todo3_X" type="button" style='position:absolute; top:0px; right:0%; cursor:pointer;'
+                    th:onclick="|todoDeleteFunc(${todo3.id})|">
+                &#88;
+            </button>
         </form>
     </nav>
 
