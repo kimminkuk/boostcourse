@@ -5,4 +5,5 @@ import java.util.List;
 public interface GuestbookRepository {
     Guestbook save(Guestbook guestbook);
     List<Guestbook> findAll();
+    List<Guestbook> findPageList(int start, int limit);
 }

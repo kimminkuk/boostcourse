@@ -42,6 +42,13 @@ public class JT_GuestbookRepository implements GuestbookRepository {
         return jdbcTemplate.query("select * from guestbook", guestbookRowMapper());
     }
 
+    //피드백 필요함.(내용 분석)
+    //RowMapper
+    @Override
+    public List<Guestbook> findPageList(int start, int limit) {
+        return jdbcTemplate.query("select * from guestbook order by id desc limit ?, ?", guestbookRowMapper(), start, limit);
+    }
+
     private RowMapper<Guestbook> guestbookRowMapper() {
         return (rs, rowNum) -> {
             Guestbook guestbook = new Guestbook();

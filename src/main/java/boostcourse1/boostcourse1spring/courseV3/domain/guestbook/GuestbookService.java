@@ -8,9 +8,7 @@ import java.util.List;
 @Transactional
 public class GuestbookService {
     private final GuestbookRepository guestbookRepository;
-
     @Autowired
-
     public GuestbookService(GuestbookRepository guestbookRepository) {
         this.guestbookRepository = guestbookRepository;
     }
@@ -21,5 +19,9 @@ public class GuestbookService {
 
     public List<Guestbook> findGuestbooks() {
         return guestbookRepository.findAll();
+    }
+
+    public List<Guestbook> findGuestbookServicePage(int start, int limit) {
+        return guestbookRepository.findPageList(start, limit);
     }
 }

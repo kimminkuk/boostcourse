@@ -13,3 +13,5 @@ CREATE TABLE log (
     regdate datetime DEFAULT NOW(),
     PRIMARY KEY(id)
 );
+
+select * from guestbook order by id desc limit 0, 5

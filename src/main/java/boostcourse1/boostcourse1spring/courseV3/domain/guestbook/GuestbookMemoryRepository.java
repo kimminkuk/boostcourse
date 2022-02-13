@@ -8,7 +8,7 @@ import java.util.Map;
 public class GuestbookMemoryRepository implements GuestbookRepository {
     private static final Map<Long, Guestbook> store = new HashMap<>();
     private static long sequence = 0L;
-
+    private static int limit = 5;
     @Override
     public Guestbook save(Guestbook guestbook) {
         guestbook.setId(++sequence);
@@ -20,6 +20,12 @@ public class GuestbookMemoryRepository implements GuestbookRepository {
     public List<Guestbook> findAll() {
         return new ArrayList<>(store.values());
     }
+
+    @Override
+    public List<Guestbook> findPageList(int start, int limit) {
+        return null;
+    }
+
     public void clearStore() {
         store.clear();
     }

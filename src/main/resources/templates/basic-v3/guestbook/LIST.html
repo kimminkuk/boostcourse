@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>LIST</title>
+    <link rel="stylesheet" href="../../css/basicV3.css">
+</head>
+<body>
+    <h1>방명록</h1>
+    <h3>
+        <div th:text="${'방명록 전체 수: ' + guestSize}"></div>
+        <div class="guestList" th:each="guest:${guestbooks}" >
+            <div th:text="${guest.id}" style="font-size:15px"></div>
+            <div th:text="${guest.name}" style="font-size:15px"></div>
+            <div th:text="${guest.content}" style="font-size:15px"></div>
+            <div th:text="${guest.regDate}" style="font-size:15px"></div>
+        </div>
+    </h3>
+    <form action="post" name="postGuestbook" enctype="UTF-8">
+        <div>
+            name:
+            <input type="text" name="nameParam" required maxlength="24" size="16">
+        </div>
+        <div>
+            <textarea name="contentParam" cols="60" rows="6"></textarea>
+        </div>
+        <button id = "gb_Enrollment" type="button" onclick="enrollmentFunc(nameParam, contentParam)" style="cursor:pointer">
+            등록
+        </button>
+    </form>
+    <div th:each="pageIndex:${pageStartList}" style="float:left;">
+        <a th:href="@{/basic-v3/guestbook/list?start={pageIndex}(pageIndex=${pageIndex})}">
+            <div th:text="${pageIndexStat.count}"></div>
+        </a>
+        &nbsp; &nbsp; &nbsp; &nbsp;
+    </div>
+
+</body>
+<script type="text/javascript" src="../../js/summitV3.js"></script>
+</html>
