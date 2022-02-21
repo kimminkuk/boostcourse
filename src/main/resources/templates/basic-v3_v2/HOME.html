@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>예약 페이지</title>
+    <link rel="stylesheet" href="../css/basicV3_v2.css">
+</head>
+<body>
+    <div id="container">
+        <div class="header">
+            <header class="header_tit">
+                <h1 class="logo">
+                    <a href="HOME" class="lnk_logo" title="네이버">
+                        <span class="spr_bi ico_n_logo">네이버</span>
+                    </a>
+                    <a href="#" class="lnk_logo" title="예약">
+                        <span class="spr_bi ico_bk_logo">예약</span>
+                    </a>
+                </h1>
+                <a href="./LOGIN.html" class="btn_login">
+                    <span class="viewReservation" title="예약확인">예약확인</span>
+                </a>
+            </header>
+        </div>
+        <!--<hr>-->
+        <div class="event">
+            <div class="section_visual">
+                <div class="group_visual">
+                    <div class="container_visual">
+                        <div class="prev_e" style="display:none;">
+                            <div class="prev_inn">
+                                <a href="#" class="btn_pre_e" title="이전">
+                                    <i class="spr_book_event spr_event_pre">이전</i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="nxt_e" style="display:none;">
+                            <div class="nxt_inn">
+                                <a href="#" class="btn_nxt_e" title="다음">
+                                    <i class="spr_book_event spr_event_nxt">다음</i>
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="container_visual_mk" id="slideImg">
+                                <!-- 슬라이딩기능: 이미지 (type = 'th')를 순차적으로 노출 -->
+                                <ul class="visual_img_mk">
+                                    <img src="../webapp/banner/go_1.jpeg" alt="">
+                                    <img src="../webapp/banner/sudal_1.jpeg" alt="">
+                                    <img src="../webapp/banner/tiger_1.jpeg" alt="">
+                                </ul>
+                            </div>
+                            <span class="nxt_fix" style="display:none;"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="gototop">
+
+        </div>
+        <div class="footer">
+            <p class="dcs_footer">네이버예약페이지 테스트 footer</p>
+            <span class="copyright">저작권 없음</span>
+        </div>
+    </footer>
+    <script src="../js/mainV3_v2.js?ver=1"></script>
+</body>
+</html>
