@@ -9,3 +9,8 @@
 3. Ajax로 방향 이동 하면서, DB에 저장하는거 까지는 가능하지만 새로고침을 하지 않고는 html에 데이터를 알려주기 어려워서, javascript에서 createElement로 할까 고민중... 일단, DB update sql 추가 컨셉은 조금 헷갈리니 createElement로 UI만 완성하고 생각하자.
 
 4. document.append 등을 이용해서 칸을 움직이고 상태를 변경하면서 동시에 DB에 데이터를 저장하고 싶었지만 1번 실행 이외에 여러 번 동작하면, URL 새로고침 없이 DB에 변경된 상태등을 실시간으로 전송 하지 못하는 상태다. 일단 이 정도로 끝
+
+
+# Issue (Project 3-2)
+1. 광고 배너 무한 루프 -> setInterval동작 구현으로 했지만, css의 transition으로 리팩토링 예정
+2. 탭UI 구현 했지만 addEventListener 구현이 조금 힘들어서 이중 for로 처리함, 좋은 방법 발견시 리팩토링 예정
