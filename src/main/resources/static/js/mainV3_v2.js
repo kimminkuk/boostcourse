@@ -38,33 +38,36 @@ window.addEventListener("load", function() {
             slideImgCntItem[end].style.left = prevX + 'px';
         });
     }
-
-//    function mainTimer() {
-//        setTimeout(() => {
-//            if (mainTimerCount >= 20) return;
-//            start++;
-//            if(start >= slideImgCntItem.length) {
-//                start = 0;
-//            }
-//            //1,0 -> 2,1 -> 3,2 -> 0,3
-//            //1,0 -> 2,1 ....
-//            move(start, end, "right");
-//            end = start;
-//            mainTimerCount++;
-//            mainTimer();
-//        }, AUTO_TIME);
-//    }
-//    function move(start, end, type) {
-//        var next_XPos = slideImg.offsetWidth;
-//        var pre_XPos = 0;
-//        next_XPos -= MOVEING_PX;
-//        slideImgCntItem[start].style.left = next_XPos + 'px';
-//            if(next_XPos <= 0) {
-//                clearTimeout(set);
-//                next_XPos = slideImg.offsetWidth;
-//            }
-//        pre_XPos -= MOVEING_PX;
-//        slideImgCntItem[end].style.left = pre_XPos + 'px';
-//    }
-//    mainTimer();
 });
+
+function makeTemplate(data, clickedName) {
+    console.log(clickedName);
+}
+
+function sendCategoryAjax(url, clickedName) {
+    var oReq = new XMLHttpRequest();
+    oReq.addEventListener("load", function() {
+        //var data = JSON.parse(oReq.responseText);
+        var data =''
+        makeTemplate(data, clickedName);
+    });
+    oReq.open("GET",url);
+    oReq.send();
+}
+
+var categoryClick = document.querySelectorAll(".anchor");
+var cateFirst = categoryClick[0];
+//[].forEach.call(categoryClick, function(evt){
+//    evt.addEventListener('click',function(evt2){
+//        sendCategoryAjax("",evt2.target);
+//    });
+//});
+
+for (var i = 0, len=categoryClick.length; i < len; i++ ) {
+    categoryClick[i].addEventListener('click', function(evt) {
+        for (var j = 0, len2=categoryClick.length; j < len2; j++ ) {
+            categoryClick[j].className ='anchor';
+        }
+        evt.currentTarget.className = 'anchor active';
+    });
+}

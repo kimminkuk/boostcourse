@@ -202,5 +202,54 @@ btn_login,
     font-size : 0px;
     line-height: 300px;
     color : #fff;
-    transition: ease-in;
+    1transition: all 1s;
+}
+
+.event .section_event_tab {
+    position: relative
+}
+
+.event .section_event_tab .event_tab_lst {
+    overflow-y: hidden;
+    overflow-x: auto;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    white-space: nowrap;
+    word-wrap: normal;
+    -webkit-overflow-scrolling: touch
+}
+.event .section_event_tab .event_tab_lst>.item {
+    display: inline-block;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent
+}
+
+.event .section_event_tab .event_tab_lst>.item .anchor {
+    display: inline-block;
+    margin-right: 13px;
+    padding: 10px 4.5px 10px 4px;
+    color: #000;
+    box-sizing: border-box;
+    line-height: 20px
+}
+
+.event .section_event_tab .event_tab_lst>.item .anchor.active {
+    padding: 10px 4.5px 8px 4px;
+    color: #0aba16;
+    border-bottom: 2px solid #0aba16;
+    font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Helvetica Nenu, Helvetica, Roboto, Arial, NanumGothicWebB, '맑은 고딕', MalgunGothic, '돋움', Dotum, sans-serif;
+    font-weight: 600
+}
+.event .section_event_tab .event_tab_lst>.item .anchor.last {
+    color: #F82222!important
+}
+.event .section_event_tab .event_tab_lst>.item .anchor.last.active {
+    color: #0aba16
+}
+.event .section_event_tab .event_tab_lst>.item:last-child {
+    margin-right: 0
 }
