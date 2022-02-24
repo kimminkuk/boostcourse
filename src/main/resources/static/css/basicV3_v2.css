@@ -218,7 +218,8 @@ btn_login,
     padding-bottom: 5px;
     white-space: nowrap;
     word-wrap: normal;
-    -webkit-overflow-scrolling: touch
+    -webkit-overflow-scrolling: touch;
+    margin : 0px;
 }
 .event .section_event_tab .event_tab_lst>.item {
     display: inline-block;
@@ -252,4 +253,172 @@ btn_login,
 }
 .event .section_event_tab .event_tab_lst>.item:last-child {
     margin-right: 0
+}
+
+.event .section_event_lst {
+    margin-top: -6px;
+    border-top: 1px solid #e7e7e7;
+    width : 400px;
+}
+.event .section_event_lst .event_lst_txt {
+    1padding: 9px 20px 7px;
+    text-align: center;
+    background-color: #fff;
+    font-size: 13px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Helvetica Nenu, Helvetica, Roboto, Arial, NanumGothicWebR, '맑은 고딕', MalgunGothic, '돋움', Dotum, sans-serif;
+    font-weight: 400;
+    color: #666
+}
+.event .wrap_event_box {
+    overflow: hidden;
+    padding-left: 2.5px;
+    padding-right: 2px;
+    border-top: 1px solid #e5e8eb;
+    background-color: #e9ecef
+}
+.event .wrap_event_box .lst_event_box {
+    width: 50%;
+    float: left;
+    1padding-top: 10px;
+    padding-left: 2.5px;
+    padding-right: 3.5px;
+    box-sizing: border-box
+}
+.event .wrap_event_box .lst_event_box .item {
+    width: 100%;
+    overflow: hidden;
+    display: inline-block;
+    float: left;
+    margin-bottom: 6px;
+    box-sizing: border-box
+}
+.event .wrap_event_box .lst_event_box .item .item_book {
+    display: block
+}
+.event .wrap_event_box .lst_event_box .item .item_book .item_preview {
+    overflow: hidden;
+    position: relative;
+    display: block
+}
+.event .wrap_event_box .lst_event_box .item .event_txt {
+    position: relative;
+    padding: 11px 11.5px 12.5px;
+    border-left: 1px solid #e1e4e7;
+    border-right: 1px solid #e1e4e7;
+    border-bottom: 1px solid #e1e4e7;
+    background-color: #fff
+}
+.seat_wrap,
+.wrap_map {
+    position: absolute;
+    top: 0
+}
+.event .wrap_event_box .lst_event_box .item .event_txt .event_txt_tit {
+    margin-bottom: 8px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Helvetica Nenu, Helvetica, Roboto, Arial, NanumGothicWebB, '맑은 고딕', MalgunGothic, '돋움', Dotum, sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: #000
+}
+.event .wrap_event_box .lst_event_box .item .event_txt .event_txt_dsc,
+.event .wrap_event_box .lst_event_box .item .event_txt .event_txt_tit .sm {
+    font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Helvetica Nenu, Helvetica, Roboto, Arial, NanumGothicWebR, '맑은 고딕', MalgunGothic, '돋움', Dotum, sans-serif;
+    font-weight: 400;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+.event .wrap_event_box .lst_event_box .item .event_txt .event_txt_tit .sm {
+    padding-top: 3px;
+    padding-bottom: 9.5px;
+    margin-left: .5px;
+    border-bottom: 1px solid #e7e7e7;
+    font-size: 14px;
+    text-indent: -.5px;
+    line-height: 14px;
+    white-space: nowrap
+}
+.event .wrap_event_box .lst_event_box .item .event_txt .event_txt_dsc {
+    margin-left: 2px;
+    margin-right: 2px;
+    font-size: 16px;
+    line-height: 24px;
+    display: -webkit-box;
+    word-wrap: break-word;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: #999
+}
+
+.img_thumb {
+    width: 100%;
+    vertical-align: top
+}
+
+.line_table table td,
+.preview../img_thumb {
+    vertical-align: middle
+}
+.item_list_wrap .item_list .item .item_preview {
+    float: left;
+    position: relative;
+    margin: 0 13px 0 0;
+    width: 90px;
+    height: 90px
+}
+
+.gototop .lnk_top,
+.item_name {
+    color: #000;
+    text-align: center
+}
+
+.gototop {
+    z-index: 1200;
+    position: relative;
+    background-color: #e9ecef;
+    width : 400px;
+}
+.gototop .lnk_top {
+    display: block;
+    padding: 18px 0 19.5px;
+    font-size: 13px;
+    line-height: 15px
+}
+.gototop .lnk_top .lnk_top_text {
+    display: inline-block;
+    position: relative;
+    padding-left: 13px
+}
+.gototop .lnk_top .lnk_top_text:after {
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 9px;
+    height: 11px;
+    //background-image: url(.../img/spr_book2.9951b6760ed19190feefaf8e9c5bed2e.png);
+    background-size: 330px 400px;
+    background-repeat: no-repeat;
+    background-position: -299px -26px;
+    content: ''
+}
+
+.more .btn{
+    width: 380px;
+    background-color: #fff;
+    height: 40px;
+    margin: 5px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid gray;
+}
+.footer {
+    z-index: 1200;
+    overflow: hidden;
+    position: relative;
+    background: #e9ecef;
+    font: 0/0 a;
+    word-wrap: break-word;
+    font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Helvetica Nenu, Helvetica, Roboto, Arial, NanumGothicWebR, '맑은 고딕', MalgunGothic, '돋움', Dotum, sans-serif
 }
