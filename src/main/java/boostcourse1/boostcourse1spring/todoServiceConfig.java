@@ -9,6 +9,12 @@ import boostcourse1.boostcourse1spring.courseV3.domain.log.LogRepository;
 import boostcourse1.boostcourse1spring.courseV3.domain.log.LogService;
 import boostcourse1.boostcourse1spring.courseV3.repository.JT_GuestbookRepository;
 import boostcourse1.boostcourse1spring.courseV3.repository.JT_LogRepository;
+import boostcourse1.boostcourse1spring.courseV3_v2.domain.category.CategoryRepository;
+import boostcourse1.boostcourse1spring.courseV3_v2.domain.category.CategoryService;
+import boostcourse1.boostcourse1spring.courseV3_v2.domain.product.ProductRepository;
+import boostcourse1.boostcourse1spring.courseV3_v2.domain.product.ProductService;
+import boostcourse1.boostcourse1spring.courseV3_v2.repository.JT_CategoryRepository;
+import boostcourse1.boostcourse1spring.courseV3_v2.repository.JT_ProductRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -22,6 +28,7 @@ public class todoServiceConfig {
         this.dataSource = dataSource;
     }
 
+    //Project 2
     @Bean
     public TodoService todoService() {
         return new TodoService(todoRepository());
@@ -31,6 +38,7 @@ public class todoServiceConfig {
         return new JdbcTemplateTodoRepository(dataSource);
     }
 
+    //Project 3-1
     @Bean
     public LogService logService() {
         return new LogService(logRepository());
@@ -49,5 +57,25 @@ public class todoServiceConfig {
     @Bean
     public GuestbookRepository guestbookRepository() {
         return new JT_GuestbookRepository(dataSource);
+    }
+
+    //Project 3-2
+    @Bean
+    ProductService productService() {
+        return new ProductService(productRepository());
+    }
+
+    @Bean
+    public ProductRepository productRepository() {
+        return new JT_ProductRepository(dataSource);
+    }
+
+    @Bean
+    CategoryService categoryService() {
+        return new CategoryService(categoryRepository());
+    }
+    @Bean
+    public CategoryRepository categoryRepository() {
+        return new JT_CategoryRepository(dataSource);
     }
 }
