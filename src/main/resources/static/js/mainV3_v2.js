@@ -40,8 +40,8 @@ window.addEventListener("load", function() {
     }
 });
 
-function makeTemplate(data, clickedName) {
-    console.log(clickedName);
+function makeTemplate(data) {
+
 }
 
 function sendCategoryAjax(url, clickedName) {
@@ -49,7 +49,7 @@ function sendCategoryAjax(url, clickedName) {
     oReq.addEventListener("load", function() {
         //var data = JSON.parse(oReq.responseText);
         var data =''
-        makeTemplate(data, clickedName);
+        makeTemplate(data);
     });
     oReq.open("GET",url);
     oReq.send();
@@ -57,11 +57,6 @@ function sendCategoryAjax(url, clickedName) {
 
 var categoryClick = document.querySelectorAll(".anchor");
 var cateFirst = categoryClick[0];
-//[].forEach.call(categoryClick, function(evt){
-//    evt.addEventListener('click',function(evt2){
-//        sendCategoryAjax("",evt2.target);
-//    });
-//});
 
 for (var i = 0, len=categoryClick.length; i < len; i++ ) {
     categoryClick[i].addEventListener('click', function(evt) {
@@ -70,4 +65,9 @@ for (var i = 0, len=categoryClick.length; i < len; i++ ) {
         }
         evt.currentTarget.className = 'anchor active';
     });
+}
+
+function productCountFunc(data) {
+    var productCategoryListCount = document.querySelector(".pink");
+    productCategoryListCount.innerText = data;
 }

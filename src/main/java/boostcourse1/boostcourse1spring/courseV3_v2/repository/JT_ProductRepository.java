@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import javax.sql.DataSource;
 import java.util.List;
+import java.util.Optional;
 
 public class JT_ProductRepository implements ProductRepository {
     private final JdbcTemplate jdbcTemplate;
@@ -19,6 +20,32 @@ public class JT_ProductRepository implements ProductRepository {
     @Override
     public List<Product> findAll() {
         return jdbcTemplate.query("select * from product", productRowMapper());
+    }
+
+    @Override
+    public List<Product> findExhibitionAll() {
+        return jdbcTemplate.query("select * from product where category_id = 1", productRowMapper());
+
+    }
+
+    @Override
+    public List<Product> findMusicalAll() {
+        return jdbcTemplate.query("select * from product where category_id = 2", productRowMapper());
+    }
+
+    @Override
+    public List<Product> findConcertAll() {
+        return jdbcTemplate.query("select * from product where category_id = 3", productRowMapper());
+    }
+
+    @Override
+    public List<Product> findClassicAll() {
+        return jdbcTemplate.query("select * from product where category_id = 4", productRowMapper());
+    }
+
+    @Override
+    public List<Product> findTheaterAll() {
+        return jdbcTemplate.query("select * from product where category_id = 5", productRowMapper());
     }
 
     private RowMapper<Product> productRowMapper() {
