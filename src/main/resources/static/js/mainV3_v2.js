@@ -51,7 +51,11 @@ function sendCategoryAjax(url, clickedName) {
         var data =''
         makeTemplate(data);
     });
-    oReq.open("GET",url);
+    oReq.open("GET",'http://49.236.147.192:9090/api/products', true);
+    oReq.setRequestHeader('X-PINGOTHER', 'pingpong');
+    oReq.setRequestHeader('Content-Type', 'application/xml');
+    oReq.withCredentials = true;
+    //oReq.onreadystatechange = someHandler;
     oReq.send();
 }
 
@@ -64,10 +68,66 @@ for (var i = 0, len=categoryClick.length; i < len; i++ ) {
             categoryClick[j].className ='anchor';
         }
         evt.currentTarget.className = 'anchor active';
+        sendCategoryAjax('','test');
     });
 }
 
 function productCountFunc(data) {
     var productCategoryListCount = document.querySelector(".pink");
     productCategoryListCount.innerText = data;
+    productCategoryListCount.style.color = red;
+}
+
+function createListEventBox(parentNode) {
+    var moreBtnPos = document.querySelector(".more");
+    var moreBtnParent = moreBtnPos.parentNode;
+
+    var moreCreateElement2 = document.createElement("li");
+    moreCreateElement2.className = "item";
+
+    var moreCreateElement4 = document.createElement("a");
+    moreCreateElement4.className = "item_book";
+    moreCreateElement2.appendChild(moreCreateElement4);
+
+    var moreCreateElement5 = document.createElement("div");
+    moreCreateElement5.className = 'item_preview';
+    moreCreateElement4.appendChild(moreCreateElement5);
+
+    var moreCreateElement6 = document.createElement("img");
+    moreCreateElement6.className = 'img_thumb';
+    var moreCreateElement7 = document.createElement("span");
+    moreCreateElement7.className = 'img_border';
+    moreCreateElement5.appendChild(moreCreateElement6);
+    moreCreateElement5.appendChild(moreCreateElement7);
+
+    var moreCreateElement8 = document.createElement("div");
+    moreCreateElement8.className = 'event_txt';
+    moreCreateElement4.appendChild(moreCreateElement8);
+
+    var moreCreateElement9 = document.createElement("h4");
+    moreCreateElement9.className = 'event_txt_tit';
+    moreCreateElement8.appendChild(moreCreateElement9);
+
+    var moreCreateElement10 = document.createElement("span");
+    var moreCreateElement11 = document.createElement("small");
+    moreCreateElement11.className = 'sm';
+    moreCreateElement9.appendChild(moreCreateElement10);
+    moreCreateElement9.appendChild(moreCreateElement11);
+
+    var moreCreateElement12 = document.createElement("p");
+    moreCreateElement12.className = 'event_txt_dsc';
+    moreCreateElement8.appendChild(moreCreateElement12);
+
+    parentNode.appendChild(moreCreateElement2);
+    moreBtnParent.insertBefore(parentNode, moreBtnPos);
+}
+
+function moreList(e) {
+    var temp2 = document.querySelector(".more");
+    var parent = temp2.parentNode;
+
+    var moreCreateElement1 = document.createElement("ul");
+    moreCreateElement1.className = "lst_event_box";
+    createListEventBox(moreCreateElement1);
+    createListEventBox(moreCreateElement1);
 }

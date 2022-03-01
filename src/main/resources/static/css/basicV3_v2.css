@@ -269,6 +269,11 @@ btn_login,
     font-weight: 400;
     color: #666
 }
+
+.pink {
+    color : orangered;
+}
+
 .event .wrap_event_box {
     overflow: hidden;
     padding-left: 2.5px;
@@ -318,8 +323,11 @@ btn_login,
     font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Helvetica Nenu, Helvetica, Roboto, Arial, NanumGothicWebB, '맑은 고딕', MalgunGothic, '돋움', Dotum, sans-serif;
     font-weight: 600;
     font-size: 15px;
-    color: #000
+    color: #000;
+
+    text-decoration:none;
 }
+
 .event .wrap_event_box .lst_event_box .item .event_txt .event_txt_dsc,
 .event .wrap_event_box .lst_event_box .item .event_txt .event_txt_tit .sm {
     font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', Helvetica Nenu, Helvetica, Roboto, Arial, NanumGothicWebR, '맑은 고딕', MalgunGothic, '돋움', Dotum, sans-serif;
@@ -389,6 +397,8 @@ btn_login,
     display: inline-block;
     position: relative;
     padding-left: 13px
+
+    text-align : center;
 }
 .gototop .lnk_top .lnk_top_text:after {
     display: block;
@@ -412,6 +422,7 @@ btn_login,
     font-weight: bold;
     text-align: center;
     border: 1px solid gray;
+    cursor:pointer;
 }
 .footer {
     z-index: 1200;
